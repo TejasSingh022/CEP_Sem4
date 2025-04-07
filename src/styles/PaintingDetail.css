@@ -1,0 +1,249 @@
+/* PaintingDetail.css */
+.painting-detail-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 48px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+  }
+  
+  .painting-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 60px;
+  }
+  
+  @media (min-width: 768px) {
+    .painting-detail {
+      flex-direction: row;
+    }
+    
+    .painting-detail-image {
+      width: 55%;
+    }
+    
+    .painting-detail-info {
+      width: 45%;
+    }
+  }
+  
+  .painting-detail-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .additional-images {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+  }
+  
+  .additional-images .thumbnail {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+  }
+  
+  .additional-images .thumbnail:hover {
+    border-color: #a05a2c;
+  }
+  
+  .painting-detail-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #2c2c2c;
+  }
+  
+  .painting-detail-artist {
+    font-size: 18px;
+    color: #a05a2c;
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+  
+  .painting-detail-price {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: #333;
+  }
+  
+  .painting-detail-specs {
+    margin-bottom: 24px;
+    padding: 16px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+  }
+  
+  .spec-item {
+    display: flex;
+    margin-bottom: 8px;
+  }
+  
+  .spec-label {
+    font-weight: 600;
+    width: 100px;
+    color: #555;
+  }
+  
+  .painting-detail-description {
+    line-height: 1.7;
+    margin-bottom: 32px;
+    color: #444;
+  }
+  
+  .purchase-options {
+    margin-bottom: 32px;
+  }
+  
+  .stock-status {
+    margin-bottom: 16px;
+  }
+  
+  .stock-status .in-stock {
+    color: #2e7d32;
+    font-weight: 600;
+  }
+  
+  .stock-status .out-of-stock {
+    color: #c62828;
+    font-weight: 600;
+  }
+  
+  .quantity-selector {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  
+  .quantity-selector label {
+    font-weight: 600;
+  }
+  
+  .quantity-selector select {
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+  }
+  
+  .add-to-cart-button {
+    width: 100%;
+    padding: 16px;
+    background-color: #a05a2c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .add-to-cart-button:hover {
+    background-color: #874d25;
+  }
+  
+  .add-to-cart-button.added {
+    background-color: #2e7d32;
+  }
+  
+  .shipping-info {
+    margin-top: 32px;
+    padding: 16px;
+    border-top: 1px solid #eee;
+  }
+  
+  .shipping-info h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: #333;
+  }
+  
+  .shipping-info p {
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 14px;
+  }
+  
+  /* Artist Info Section */
+  .artist-info-section {
+    margin-bottom: 48px;
+    padding: 32px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+  }
+  
+  .artist-info-section h2 {
+    font-size: 24px;
+    margin-bottom: 16px;
+    color: #333;
+  }
+  
+  .view-more-link {
+    display: inline-block;
+    margin-top: 16px;
+    color: #a05a2c;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .view-more-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Related Paintings Section */
+  .related-paintings-section {
+    margin-bottom: 48px;
+  }
+  
+  .related-paintings-section h2 {
+    font-size: 24px;
+    margin-bottom: 24px;
+    color: #333;
+  }
+  
+  .related-paintings {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 24px;
+  }
+  
+  .related-painting-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+  }
+  
+  .related-painting-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .related-painting-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+  
+  .related-painting-card h3 {
+    padding: 12px 16px 0;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .related-painting-price {
+    padding: 4px 16px 16px;
+    font-weight: 600;
+    color: #a05a2c;
+  }

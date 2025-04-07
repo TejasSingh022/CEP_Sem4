@@ -1,0 +1,170 @@
+/* Contact.css */
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 48px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+  }
+  
+  .page-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 32px;
+    color: #2c2c2c;
+  }
+  
+  .section-title {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: #333;
+  }
+  
+  /* Contact Section Styles */
+  .contact-section {
+    margin-bottom: 64px;
+  }
+  
+  .contact-content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  
+  @media (min-width: 768px) {
+    .contact-content {
+      flex-direction: row;
+    }
+    
+    .contact-info,
+    .contact-form {
+      width: 50%;
+    }
+  }
+  
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  
+  .info-item {
+    background-color: #f8f8f8;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .info-item h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #333;
+    border-bottom: 2px solid #a05a2c;
+    padding-bottom: 8px;
+  }
+  
+  .info-item p {
+    margin-bottom: 8px;
+    line-height: 1.5;
+    color: #555;
+  }
+  
+  .contact-form {
+    background-color: #f7f7f7;
+    padding: 32px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .contact-form h3 {
+    font-size: 24px;
+    margin-bottom: 24px;
+    font-weight: 600;
+    color: #2c2c2c;
+  }
+  
+  .form-group {
+    margin-bottom: 24px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #444;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 16px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #a05a2c;
+    box-shadow: 0 0 0 2px rgba(160, 90, 44, 0.1);
+  }
+  
+  .submit-button {
+    background-color: #a05a2c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .submit-button:hover {
+    background-color: #874d25;
+  }
+  
+  .submit-button.sending {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+  
+  .success-message {
+    margin-top: 16px;
+    padding: 12px;
+    background-color: #f0f9e8;
+    color: #3c763d;
+    border-radius: 4px;
+    text-align: center;
+    border: 1px solid #d6e9c6;
+  }
+  
+  /* Map Section Styles */
+  .map-section {
+    margin-bottom: 64px;
+  }
+  
+  .map-container {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .map-placeholder {
+    width: 100%;
+    height: 400px;
+    background-color: #eee;
+  }
+  
+  .map-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
