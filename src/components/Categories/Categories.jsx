@@ -1,19 +1,23 @@
 import React from 'react';
 import './Categories.css';
-import painting4 from '../../assets/painting4.jpg';
+import Collection1 from '../../assets/Collection1.png'; 
+import Collection2 from '../../assets/Collection2.jpeg';
+import { useNavigate } from 'react-router-dom';
 
 const Categories = () => {
+  const navigate = useNavigate();
+
   const categories = [
     {
       id: 1,
       title: 'Paintings',
-      image: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5',
+      image: Collection1,
       description: 'Explore our collection of unique paintings'
     },
     {
       id: 2,
       title: 'Pottery',
-      image: painting4,
+      image: Collection2,
       description: 'Discover handcrafted pottery pieces'
     }
   ];
@@ -27,7 +31,12 @@ const Categories = () => {
             <img src={category.image} alt={category.title} />
             <h3>{category.title}</h3>
             <p>{category.description}</p>
-            <button className="explore-button">Explore</button>
+            <button
+              className="explore-button"
+              onClick={() => navigate('/skill-share')}
+            >
+              Explore
+            </button>
           </div>
         ))}
       </div>

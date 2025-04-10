@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import '../styles/skillshare.css';
+import { useNavigate } from 'react-router-dom';
 
 const SkillShare = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const navigate = useNavigate();
   
   const categories = [
     { id: 'all', name: 'All Skills' },
@@ -180,7 +182,9 @@ const SkillShare = () => {
                 Every purchase of crafts from Anandwan supports not just an individual artisan, 
                 but helps sustain the entire community's sustainable development initiatives.
               </p>
-              <button className="impact-button">Learn About Our Community</button>
+              <button className="impact-button"
+                onClick={() => navigate('/about')}
+              >Learn About Our Community</button>
             </div>
             <div className="impact-video">
               <video controls poster="https://img1.rapidleaks.com/2018/01/Baba-Amte-at-Anandwan.jpeg">

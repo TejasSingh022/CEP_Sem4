@@ -5,23 +5,23 @@ import artist1 from '../assets/POTTERY.jpeg';
 
 const About = () => {
   const artists = [
-    { 
-      name: "Emma Chen", 
-      specialty: "Ceramic Potter", 
-      bio: "Specializing in minimalist pottery with Japanese influences",
-      image: "/api/placeholder/400/300" 
+    {
+      name: 'Lata Bhoyar',
+      specialty: 'Plant Waste Art',
+      bio: 'Creating art from dried flowers, leaves and seeds for over 15 years at Anandwan.',
+      image: 'https://th.bing.com/th/id/OIP.i9slRbIrj_KvIwXWIAPcjgHaE6?rs=1&pid=ImgDetMain',
     },
-    { 
-      name: "Marcus Rivera", 
-      specialty: "Abstract Painter", 
-      bio: "Creating vibrant acrylic works inspired by natural landscapes",
-      image: "/api/placeholder/400/300" 
+    {
+      name: 'Vijay Kamble',
+      specialty: 'Wood Crafts',
+      bio: 'Specializes in creating functional wooden items with traditional tribal motifs.',
+      image: 'https://th.bing.com/th/id/OIP.C8Vi5OTdSGGknlJfigtgMgHaL4?pid=ImgDet&w=184&h=296&c=7&dpr=1.3',
     },
-    { 
-      name: "Sophia Kim", 
-      specialty: "Sculptural Pottery", 
-      bio: "Combining traditional techniques with contemporary designs",
-      image: "/api/placeholder/400/300" 
+    {
+      name: 'Meena Pawar',
+      specialty: 'Fabric Crafts',
+      bio: 'Teaches traditional embroidery techniques to new community members.',
+      image: 'https://files.globalgiving.org/pfil/36135/pict_featured_large.jpg?t=1540231613000',
     }
   ];
 
@@ -42,15 +42,12 @@ const About = () => {
           <div className="about-text">
             <h2 className="section-title">Our Story</h2>
             <p>
-              Founded in 2015, Artisan Creations began as a small collective of local artists passionate about bringing handcrafted art into everyday homes. What started as a weekend market stall has grown into a curated online gallery of unique pottery and paintings.
+              Founded in 2025, ArtCraft Gallery is a heartfelt initiative dedicated to showcasing the artistry and spirit of Anandwan. What began as a mission to empower the talented artisans of this inspiring community has evolved into an online platform that shares their handcrafted products and timeless skills with the world.
             </p>
-            <p>
-              Each piece in our collection is handcrafted with care, reflecting the unique style and vision of our talented artisans. We believe in the power of art to transform spaces and inspire moments of joy and reflection in daily life.
-            </p>
-            
+
             <h2 className="section-title">Our Commitment</h2>
             <p>
-              We're committed to sustainable practices in our production processes and supporting independent artists. When you purchase from Artisan Creations, you're not just buying a beautiful piece of art—you're supporting a community of creators and a more thoughtful approach to home decor.
+              At ArtCraft Gallery, we are committed to uplifting the Anandwan community by providing a platform for their talent and encouraging sustainable, handmade artistry. Every purchase directly supports their livelihood and celebrates the legacy of skill and purpose-driven creativity.
             </p>
           </div>
         </div>

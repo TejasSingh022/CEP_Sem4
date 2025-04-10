@@ -1,45 +1,23 @@
 import React, { useState } from 'react';
 import '../styles/PaintingDetail.css';
-import painting1 from '../assets/painting1.jpg';
-import painting2 from '../assets/painting2.jpg';
-import painting3 from '../assets/painting3.jpg'; 
 
-const PaintingDetail = ({ id }) => {
-  // Sample data for demonstration
-  const painting = {
-    id: 2,
-    title: "Abstract Coastal Dreams",
-    artist: "Sophia Kim",
-    price: 199.99,
-    dimensions: "18\" x 24\"",
-    medium: "Oil on Canvas",
-    image: painting1,
-    description: "An abstract interpretation of coastal waves with blues, teals, and sandy tones. This piece captures the essence of the ocean's movement and the tranquility of coastal landscapes.",
-    artistBio: "Sophia Kim is a contemporary artist who specializes in abstract interpretations of natural landscapes. Her work is characterized by bold colors and dynamic brushstrokes.",
-    year: 2023,
-    inStock: true,
-    additionalImages: [
-      painting1
-    ]
-  };
-  
+const PaintingDetail = ({ painting, onClose }) => {
   const [quantity, setQuantity] = useState(1);
   const [addedToCart, setAddedToCart] = useState(false);
-  
+
   const handleAddToCart = () => {
-    // In a real app, you would add the item to your cart state/context
     setAddedToCart(true);
     setTimeout(() => setAddedToCart(false), 2000);
   };
 
   return (
     <div className="painting-detail-container">
+      <button className="close-button" onClick={onClose}>Close</button>
       <div className="painting-detail">
         <div className="painting-detail-image">
           <img src={painting.image} alt={painting.title} />
-          
           <div className="additional-images">
-            {painting.additionalImages.map((image, index) => (
+            {painting.additionalImages?.map((image, index) => (
               <img 
                 key={index} 
                 src={image} 
@@ -53,7 +31,7 @@ const PaintingDetail = ({ id }) => {
         <div className="painting-detail-info">
           <h1 className="painting-detail-title">{painting.title}</h1>
           <p className="painting-detail-artist">by {painting.artist}</p>
-          <p className="painting-detail-price">${painting.price.toFixed(2)}</p>
+          <p className="painting-detail-price">Rs. {painting.price.toFixed(2)}</p>
           
           <div className="painting-detail-specs">
             <div className="spec-item">
@@ -70,9 +48,7 @@ const PaintingDetail = ({ id }) => {
             </div>
           </div>
           
-          <p className="painting-detail-description">
-            {painting.description}
-          </p>
+          <p className="painting-detail-description">{painting.description}</p>
           
           <div className="purchase-options">
             <div className="stock-status">
@@ -108,8 +84,8 @@ const PaintingDetail = ({ id }) => {
           
           <div className="shipping-info">
             <h3>Shipping & Returns</h3>
-            <p>Free shipping on orders over $200. Paintings are carefully packaged to ensure safe delivery.</p>
-            <p>Returns accepted within 14 days of delivery. Please contact us for return shipping instructions.</p>
+            <p>Free shipping on orders over Rs. 200. Paintings are carefully packaged to ensure safe delivery.</p>
+            <p>Returns accepted within 14 days of delivery. Please contact us for return instructions.</p>
           </div>
         </div>
       </div>
@@ -118,19 +94,6 @@ const PaintingDetail = ({ id }) => {
         <h2>About the Artist</h2>
         <p>{painting.artistBio}</p>
         <a href="#" className="view-more-link">View more works by {painting.artist}</a>
-      </section>
-      
-      <section className="related-paintings-section">
-        <h2>You Might Also Like</h2>
-        <div className="related-paintings">
-          {[1, 2, 3].map(item => (
-            <div key={item} className="related-painting-card">
-              <img src="/api/placeholder/300/200" alt="Related painting" />
-              <h3>Related Painting Title</h3>
-              <p className="related-painting-price">$189.99</p>
-            </div>
-          ))}
-        </div>
       </section>
     </div>
   );

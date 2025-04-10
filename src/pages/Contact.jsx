@@ -35,9 +35,9 @@ const Contact = () => {
         <div className="contact-content">
           <div className="contact-info">
             <div className="info-item">
-              <h3>Visit Our Studio</h3>
-              <p>123 Artisan Way</p>
-              <p>Portland, OR 97205</p>
+              <h3>Visit Us</h3>
+              <p>Anandwan, Chandrapur district,</p>
+              <p>Maharashtra, PIN - 442914</p>
             </div>
             
             <div className="info-item">
@@ -50,7 +50,7 @@ const Contact = () => {
             <div className="info-item">
               <h3>Get In Touch</h3>
               <p>Email: hello@artisancreations.com</p>
-              <p>Phone: (503) 555-0123</p>
+              <p>Phone: (+91) 9999999999</p>
             </div>
           </div>
           

@@ -1,40 +1,33 @@
 import React from 'react';
 import ProductCard from '../ProductCard/ProductCard';
 import './FeaturedProducts.css';
-import painting1 from '../../assets/painting1.jpg';
-import painting2 from '../../assets/painting2.jpg';
-import painting3 from '../../assets/painting3.jpg';
+import Featured1 from '../../assets/Featured1.png';
+import Featured2 from '../../assets/Featured2.jpg';
+import Featured3 from '../../assets/Featured3.jpg';
 
 const FeaturedProducts = () => {
   const products = [
     {
       id: 1,
-      name: 'Abstract Canvas Art',
-      price: 299.99,
-      image: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5',
+      name: 'String Art',
+      price: 499,
+      image: Featured1,
       category: 'Painting'
     },
     {
       id: 2,
-      name: 'Ceramic Vase',
-      price: 89.99,
-      image: painting2,
+      name: 'Fabric Art',
+      price: 499,
+      image: Featured2,
       category: 'Pottery'
     },
     {
       id: 3,
-      name: 'Landscape Painting',
-      price: 199.99,
-      image: painting1,
+      name: 'Wooden Sculpturing',
+      price: 999,
+      image: Featured3,
       category: 'Painting'
     },
-    {
-      id: 4,
-      name: 'Handmade Bowl Set',
-      price: 129.99,
-      image: painting3,
-      category: 'Pottery'
-    }
   ];
 
   return (
