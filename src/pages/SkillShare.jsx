@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import '../styles/skillshare.css';
 import { useNavigate } from 'react-router-dom';
+import video1 from '../assets/Handloom.mp4';
 
 const SkillShare = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [videoPlaying, setVideoPlaying] = useState(null);
   const navigate = useNavigate();
   
   const categories = [
@@ -11,7 +13,6 @@ const SkillShare = () => {
     { id: 'painting', name: 'Painting' },
     { id: 'fabric', name: 'Fabric Crafts' },
     { id: 'wood', name: 'Wood Crafts' },
-    { id: 'plantWaste', name: 'Plant Waste Art' }
   ];
   
   const skillVideos = [
@@ -20,29 +21,19 @@ const SkillShare = () => {
       title: 'Traditional Warli Painting Technique',
       category: 'painting',
       description: 'Learn the ancient Warli painting technique, a tribal art form from Maharashtra. Our artisans demonstrate how to create symbolic patterns using natural pigments.',
-      videoUrl: 'https://example.com/warli-painting-video',
+      videoUrl: video1, // Updated to local path
       thumbnailUrl: 'https://miro.medium.com/max/1400/1*uxVoDRfV506S-19jGiyUbg.jpeg',
-      instructor: 'Rajesh Madavi',
+      instructor: 'Artist Name',
       duration: '18:45'
-    },
-    {
-      id: 2,
-      title: 'Creating Decorative Items from Plant Waste',
-      category: 'plantWaste',
-      description: 'Watch how our craftspeople transform dried leaves, seeds, and other plant waste into beautiful decorative items for your home.',
-      videoUrl: 'https://example.com/plant-waste-crafts',
-      thumbnailUrl: 'https://www.sortra.com/wp-content/uploads/2016/12/flower-art012.jpg',
-      instructor: 'Sunita Patil',
-      duration: '24:10'
     },
     {
       id: 3,
       title: 'Handloom Weaving Basics',
       category: 'fabric',
       description: 'Learn the fundamentals of handloom weaving and how our artisans create beautiful fabric patterns using traditional techniques.',
-      videoUrl: 'https://example.com/handloom-basics',
+      videoUrl: video1,
       thumbnailUrl: 'https://www.caleidoscope.in/wp-content/uploads/2021/07/Handlooms-of-India-1.jpg',
-      instructor: 'Priya Sharma',
+      instructor: 'Artist Name',
       duration: '32:15'
     },
     {
@@ -50,9 +41,9 @@ const SkillShare = () => {
       title: 'Woodcarving: From Tree to Art',
       category: 'wood',
       description: 'Discover the entire process of woodcarving - from selecting the right wood to creating intricate designs that tell stories.',
-      videoUrl: 'https://example.com/woodcarving',
+      videoUrl: video1,
       thumbnailUrl: 'https://th.bing.com/th/id/OIP.esAYayXh4PVPD16VmT61HgHaHa?rs=1&pid=ImgDetMain',
-      instructor: 'Mahesh Gawande',
+      instructor: 'Artist Name',
       duration: '45:30'
     }
   ];
@@ -87,6 +78,16 @@ const SkillShare = () => {
   const filteredVideos = selectedCategory === 'all' 
     ? skillVideos 
     : skillVideos.filter(video => video.category === selectedCategory);
+  
+  // Function to handle watching a video
+  const handleWatchVideo = (video) => {
+    setVideoPlaying(video);
+  };
+  
+  // Function to close the video modal
+  const closeVideoModal = () => {
+    setVideoPlaying(null);
+  };
   
   return (
     <>
@@ -143,7 +144,12 @@ const SkillShare = () => {
                   <h3>{video.title}</h3>
                   <p className="video-instructor">With {video.instructor}</p>
                   <p className="video-description">{video.description}</p>
-                  <button className="watch-button">Watch Tutorial</button>
+                  <button 
+                    className="watch-button"
+                    onClick={() => handleWatchVideo(video)}
+                  >
+                    Watch Tutorial
+                  </button>
                 </div>
               </div>
             ))}
@@ -235,6 +241,26 @@ const SkillShare = () => {
           <button className="cta-button">Submit Your Skill Video</button>
         </section>
       </div>
+      
+      {/* Video Modal */}
+      {videoPlaying && (
+        <div className="video-modal-overlay" onClick={closeVideoModal}>
+          <div className="video-modal" onClick={e => e.stopPropagation()}>
+            <button className="close-modal" onClick={closeVideoModal}>✕</button>
+            <h2>{videoPlaying.title}</h2>
+            <div className="video-container">
+              <video controls autoPlay>
+                <source src={videoPlaying.videoUrl} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div className="video-modal-info">
+              <p className="video-instructor">With {videoPlaying.instructor}</p>
+              <p className="video-description">{videoPlaying.description}</p>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 };

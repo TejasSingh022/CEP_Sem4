@@ -9,6 +9,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Login from './pages/Login';
 import Cart from './pages/Cart';  
+import { CartProvider } from './components/Cart/CartContext';
 
 function Layout() {
   const location = useLocation();
@@ -17,17 +18,19 @@ function Layout() {
 
   return (
     <>
+      <CartProvider>
       {showHeader && <Header />}
       <Routes>
         <Route path="/" element={<div className="app"> <Login /></div>} />
         <Route path="/home" element={<div className="app"> <Home /></div>} />
         <Route path="/paintings" element={<Paintings />} />
         <Route path="/skill-share" element={<SkillShare />} />
+        <Route path="/cart" element={ <Cart />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/cart" element={ <Cart />} />
       </Routes>
       {showFooter&&<Footer />}
+      </CartProvider>
     </>
   );
 }

@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import '../styles/PaintingDetail.css';
+import { useCart } from '../components/Cart/CartContext';
 
 const PaintingDetail = ({ painting, onClose }) => {
   const [quantity, setQuantity] = useState(1);
   const [addedToCart, setAddedToCart] = useState(false);
+  const { addToCart } = useCart();
 
   const handleAddToCart = () => {
+    addToCart(painting, quantity);
     setAddedToCart(true);
     setTimeout(() => setAddedToCart(false), 2000);
   };
